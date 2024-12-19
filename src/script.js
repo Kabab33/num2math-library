@@ -1,22 +1,7 @@
 import jQuery from "jquery";
 const $ = jQuery.noConflict();
 
-$(document).ready(function () {
-  var form = document.getElementById("form");
-  function handleForm(event) {
-    event.preventDefault();
-    convert();
-  }
-  form.addEventListener("submit", handleForm);
-
-  $("#display").on("change", convert);
-  $(".close ").click(function () {
-    $("#mobile-notice").hide();
-  });
-
-  function convert() {
-    //  Get the number input
-    var number = document.getElementById("input").value;
+  function convert(number, gammaFuncCheckBox, eulersIdentityCheckBox, limitExponentialCheckBox, limitPolynomialCheckBox, trigCheckBox, geometricSeriesCheckBox) {
 
     // Validating input
     if (isNaN(number) || number === "" || number > 1000 || number < 0) {
@@ -24,18 +9,6 @@ $(document).ready(function () {
     }
 
     // Checkboxes
-
-    let gammaFuncCheckBox = document.getElementById("gamma-function").checked;
-    let eulersIdentityCheckBox =
-      document.getElementById("eulers-identity").checked;
-    let limitExponentialCheckBox =
-      document.getElementById("limits-exponential").checked;
-    let limitPolynomialCheckBox =
-      document.getElementById("limits-polynomial").checked;
-    let trigCheckBox =
-      document.getElementById("trig").checked;
-    let geometricSeriesCheckBox =
-      document.getElementById("geometric-series").checked;
 
     /* helper functions */
     function isOdd(n) {
